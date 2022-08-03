@@ -3,20 +3,22 @@ from pathlib import Path
 
 from setuptools import setup, find_packages
 
-if os.path.isdir("clipboard.js") and not os.path.islink(
-    "sphinx_copybutton/_static/clipboard.min.js"
-):
-    raise SystemExit("Error: Support for symbolic links is required")
+# Let's just assume this works, shall we?
+# ~~~     
+#if os.path.isdir("clipboard.js") and not os.path.islink(
+#    "sphinx_copybutton/_static/clipboard.min.js"
+#):
+#    raise SystemExit("Error: Support for symbolic links is required")
 
-if os.path.isdir("clipboard.js") and not os.path.isfile(
-    "clipboard.js/dist/clipboard.min.js"
-):
-    raise SystemExit(
-        """Error: clipboard.js submodule not available, run
+#if os.path.isdir("clipboard.js") and not os.path.isfile(
+#    "clipboard.js/dist/clipboard.min.js"
+#):
+#    raise SystemExit(
+#        """Error: clipboard.js submodule not available, run
 
-        git submodule update --init
-        """
-    )
+#        git submodule update --init
+#        """
+#    )
 
 with open("./README.md") as ff:
     readme_text = ff.read()
